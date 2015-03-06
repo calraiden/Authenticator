@@ -4,14 +4,14 @@ PdoAdapter customizada para Apigility/Zend 2
 Crie esse modulo para customizar o PDOAdapter usando o Apigility, pois precisava obter o USER_ID ao inves do Username.
 
 
-* Crie um novo modulo para as classe
+* Crie um novo modulo para as classe.
 ``` ./zftools create module Authenticator ```
 
 ou
 
 ``` git clone https://github.com/calraiden/Authenticator.git ``` 
 
-* Confirme se o modulo foi adicionado (config/application.config.php)
+* Confirme se o modulo foi adicionado (config/application.config.php).
 ```
 	return array(
 		'modules' => array(
@@ -36,7 +36,7 @@ ou
 	);
 ```
 
-*Altere o PDO Storage no (config/autoload/local.php)
+* Altere o PDO Storage no (config/autoload/local.php).
 ```
 	return array (
 			...
@@ -57,7 +57,7 @@ ou
 	);
 ```
 
-*Adicione a columa user_id em sua tabela, caso não possua.
+* Adicione a columa user_id em sua tabela, caso não possua.
 ```
 	ALTER TABLE `mydb`.`oauth_users` 
 	ADD COLUMN `user_id` VARCHAR(100) NOT NULL DEFAULT '0:0:0' AFTER `last_name`
